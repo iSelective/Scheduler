@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "flowtype",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+
+    "no-shadow": "off",
+    "no-use-before-define": 0,
+    "react/prop-types": 0,
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "object-curly-newline": ["off"],
+    "semi": ["error", "never"],
+    "max-len": [
+      "error", { "code": 150, "ignoreComments": true }
+    ],
+    "react/jsx-filename-extension": [
+       1, { "extensions": [".js", ".jsx"] }
+      ],
+    "import/extensions": [
+      1, "never", { "svg": "always", "json": "always" }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ]
+  },
+  "env": {
+    "jest": true
+  }
+}
+
