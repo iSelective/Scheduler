@@ -9,7 +9,9 @@ import {
 class LoginForm extends Component {
   constructor() {
     super()
-    this.onButtonPressBound = this.onButtonPress.bind(this)
+    this.onButtonPress = this.onButtonPress.bind(this)
+    this.onEmailChange = this.onEmailChange.bind(this)
+    this.onPasswordChange = this.onPasswordChange.bind(this)
   }
 
   onEmailChange(text) {
@@ -33,8 +35,8 @@ class LoginForm extends Component {
       return <Spinner size="large" />
     }
     return (
-      <Button onPress={this.onButtonPressBound}>
-        Login
+      <Button onPress={this.onButtonPress}>
+                Login
       </Button>
     )
   }
@@ -61,7 +63,7 @@ class LoginForm extends Component {
           <Input
             label="Email"
             placeholder="email@gmail.com"
-            onChangeText={this.onEmailChange.bind(this)}
+            onChangeText={this.onEmailChange}
             value={email}
           />
         </CardSection>
@@ -71,13 +73,12 @@ class LoginForm extends Component {
             secureTextEntry
             label="Password"
             placeholder="password"
-            onChangeText={this.onPasswordChange.bind(this)}
+            onChangeText={this.onPasswordChange}
             value={password}
           />
         </CardSection>
 
         {this.renderError()}
-
         <CardSection>
           {this.renderButton()}
         </CardSection>
@@ -85,7 +86,6 @@ class LoginForm extends Component {
     )
   }
 }
-
 const styles = {
   errorTextStyle: {
     fontSize: 20,
